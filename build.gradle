@@ -1,0 +1,37 @@
+group 'com.mycompany'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'spring-configuration-starter'
+    version = '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework:spring-context:4.3.6.RELEASE',
+            'org.apache.logging.log4j:log4j-core:2.7',
+            'org.apache.logging.log4j:log4j-jcl:2.7',
+            'org.apache.logging.log4j:log4j-slf4j-impl:2.7'
+    )
+
+
+    testCompile('org.springframework:spring-test:4.3.6.RELEASE')
+}
+
